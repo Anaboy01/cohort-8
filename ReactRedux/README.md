@@ -1,4 +1,4 @@
-# React Redux Counter Lesson
+ # React Redux Counter Lesson
 
 This lesson covers how to manage global state in React using Redux Toolkit. 
 

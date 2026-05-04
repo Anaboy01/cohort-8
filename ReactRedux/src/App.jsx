@@ -2,6 +2,7 @@ import { useState } from 'react';
 // TEACHING POINT: useSelector is how we READ data. useDispatch is how we SEND actions.
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement, incrementByAmount } from './features/counter/counterSlice';
+import Auth from './Auth';
 
 export default function App() {
   // TEACHING POINT: Connecting to the store. 
@@ -47,7 +48,7 @@ export default function App() {
             value={amount}
             onChange={(e) => setAmount(Number(e.target.value) || 0)}
             className="w-20 p-2 border-2 border-gray-200 rounded-lg text-center font-semibold focus:outline-none focus:border-blue-500"
-          />
+          /> 
           <button
             className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold p-2.5 rounded-lg transition-colors shadow-md"
             // TEACHING POINT: Passing a payload! Whatever number we put inside the action
@@ -59,6 +60,8 @@ export default function App() {
         </div>
 
       </div>
+
+      <Auth />
     </div>
   );
 }

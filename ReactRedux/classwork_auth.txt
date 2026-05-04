@@ -1,0 +1,43 @@
+ ===================================================================
+      CLASSWORK: REDUX AUTHENTICATION SIMULATION
+===================================================================
+
+📌 OBJECTIVE:
+Build a simple Authentication feature using Redux Toolkit.
+This will test your understanding of multiple slices, payloads, 
+and reading state conditionally.
+
+===================================================================
+📐 REQUIREMENTS
+===================================================================
+1. Create a new slice called `authSlice.js`.
+2. The initial state should be: `{ isLoggedIn: false, user: null }`
+3. Create two reducers: `login` and `logout`.
+   - `login` should change isLoggedIn to true, and save the action.payload to the user.
+   - `logout` should change isLoggedIn back to false, and clear the user.
+4. Add the `authSlice` to your `store.js`.
+5. Create an `Auth.jsx` component that:
+   - Displays a status banner: "Active" (if logged in) or "Not Active" (if logged out).
+   - Has two inputs (Name and Password) if NOT logged in.
+   - Shows a "Welcome [Name]" message and a Logout button if LOGGED IN.
+
+===================================================================
+🧩 HINTS (Only read if you are stuck!)
+===================================================================
+
+HINT 1 - The login reducer should look like this:
+  login: (state, action) => {
+    state.isLoggedIn = true;
+    state.user = action.payload; // Payload holds the name & password!
+  }
+
+HINT 2 - Dispatching the login:
+  Make sure you pass an OBJECT into the dispatch so it becomes the payload!
+  `dispatch(login({ name: nameState, password: passwordState }))`
+
+HINT 3 - How to get the auth state:
+  `const { isLoggedIn, user } = useSelector((state) => state.auth);`
+
+===================================================================
+⏱️ TIME: 30 minutes
+===================================================================
